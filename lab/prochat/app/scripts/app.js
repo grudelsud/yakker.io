@@ -1,13 +1,3 @@
 'use strict';
 
-angular.module('prochatApp', [])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+angular.module('prochatApp', ['prochatApp.controllers', 'prochatApp.services']);
