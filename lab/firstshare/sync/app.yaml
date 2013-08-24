@@ -1,0 +1,39 @@
+application: firstshare-memeflux
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest
+
+inbound_services:
+- mail
+- channel_presence
+
+handlers:
+- url: /images
+  static_dir: static/images
+
+- url: /css
+  static_dir: static/css
+
+- url: /js
+  static_dir: static/js
+
+- url: /bootstrap
+  static_dir: static/bootstrap
+
+- url: /(.*\.(ico|html))
+  static_files: static/\1
+  upload: static/(.*\.(ico|html))
+
+- url: /_ah/mail/.+
+  script: main_email.app
+  login: admin
+
+- url: .*
+  script: main.app
