@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+
+	<form name="formupload" enctype="multipart/form-data" method="post" action="">
+		<input type="file" name="file">
+		<input type="submit" name="submit" value="submit">
+	</form>
+
+	<div>
+		<p>base url: {{base_url}}</p>
+		<p id="result"></p>
+	</div>
+
+	<script type="text/javascript">
+
+		var clearForm = function() {
+			var $form = $('form');
+			$form.attr('action', '');
+			$form.find('input[type="file"]').val('');
+		};
+
+		var submitForm = function() {
+			var $form = $('form');
+			$.get('/api/upload_url', function(data) {
+				var form_data = new FormData();
+				form_data.append('file', $form.find('input[type="file"]')[0].files[0]);
+				$.ajax({
+					url: data.upload_url,
+					type: 'POST',
+					data: form_data,
+					processData: false,
+					contentType: false,
+					success: function(result) {
+						clearForm();
+						$('#result').append('<img src="'+result.blob_url+'">')
+						console.log(result);
+					},
+					error: function(xhr, status, error) {
+						console.log('status', status, 'error', error);
+					}
+				});
+			});
+		};
+
+		$('form').submit(function(e) {
+
+			e.preventDefault();
+
+			var $form = $(e.target);
+			var file = $form.find('input[type="file"]').val();
+
+			if (file.length) {
+				submitForm();
+			} else {
+				alert('select file first');
+			}
+		});
+	</script>
+</body>
+</html>
