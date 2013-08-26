@@ -27,4 +27,9 @@ controller('ChatroomCtrl', ['$scope', 'Chatroom', function($scope, Chatroom) {
 	$scope.whereAmI = 'Chatroom';
 
 	$scope.rooms = Chatroom.query();
+	$scope.activeRooms = [];
+
+	$scope.viewRoom = function() {
+		console.log(this);
+	}
 }]);

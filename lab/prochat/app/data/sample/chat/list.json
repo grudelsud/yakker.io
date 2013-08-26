@@ -14,7 +14,7 @@
 		"name": "stock bulletin",
 		"type": "publisher",
 		"lastactivity": "2013/08/24 12:12:12",
-		"subscribers": [
+		"participants": [
 			{ "id": 1, "name": "thomas" },
 			{ "id": 2, "name": "gianni" }
 		]
