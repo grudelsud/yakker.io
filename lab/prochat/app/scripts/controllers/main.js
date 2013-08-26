@@ -4,8 +4,8 @@ angular.module('prochatApp.controllers', ['ui.bootstrap']).
 
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider
-		.when('/profiles', {templateUrl: 'views/partials/profiles.tpl.html', controller: 'ProfileCtrl'})
-		.when('/chatrooms', {templateUrl: 'views/partials/chatrooms.tpl.html', controller: 'ChatroomCtrl'})
+		.when('/profiles', {templateUrl: 'views/app.profiles.html', controller: 'ProfileCtrl'})
+		.when('/chatrooms', {templateUrl: 'views/app.chatrooms.html', controller: 'ChatroomCtrl'})
 		.otherwise({redirectTo: '/profiles'});
 }]).
 
@@ -23,6 +23,8 @@ controller('ProfileCtrl', ['$scope', 'Profile', function($scope, Profile) {
 	};
 }]).
 
-controller('ChatroomCtrl', ['$scope', function($scope) {
+controller('ChatroomCtrl', ['$scope', 'Chatroom', function($scope, Chatroom) {
 	$scope.whereAmI = 'Chatroom';
+
+	$scope.rooms = Chatroom.query();
 }]);

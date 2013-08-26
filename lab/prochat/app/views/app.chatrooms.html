@@ -1,0 +1,21 @@
+<div class="row-fluid">
+
+	<div class="span2">
+		<table class="table">
+			<tr ng-repeat="room in rooms">
+				<td>
+					<h4>{{room.name}}</h4>
+					<p>last activity: {{room.lastactivity}}</p>
+					<p>type: {{room.type}}</p>
+					<p>participants: <span ng-repeat="participant in room.participants">{{participant.name}} </span></p>
+				</td>
+			</tr>
+		</span>
+		</table>
+	</div>
+
+	<div class="span10">
+		<h4>Room</h4>
+	</div>
+
+</div>

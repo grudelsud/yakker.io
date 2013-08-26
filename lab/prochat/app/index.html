@@ -29,9 +29,16 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <span ng-include="'views/nav.header.html'"></span>
     <div class="container-fluid">
-        <span ng-include="'views/header.html'"></span>
-        <span ng-view=""></span>
+        <div class="row-fluid">
+            <div class="span2">
+                <span ng-include="'views/nav.side.html'"></span>
+            </div>
+            <div class="span10">
+                <span ng-view=""></span>
+            </div>
+        </div>
     </div>
 
     <script src="bower_components/jquery/jquery.js"></script>

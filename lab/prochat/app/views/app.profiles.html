@@ -1,11 +1,10 @@
 <div class="row-fluid">
 
 	<div class="span2">
-		<h4>Contacts</h4>
 		<table class="table">
 			<tr ng-repeat="miniprofile in profiles">
 				<td>
-					<img ng-src="{{miniprofile.profile.imageUrl}}" class="img-circle"> 
+					<img ng-src="{{miniprofile.profile.imageUrl}}" class="img-rounded"> 
 					<button href="#" ng-click="viewProfile()">{{miniprofile.displayName}}</button>
 				</td>
 			</tr>
@@ -21,4 +20,5 @@
 			<tab heading="activity">{{activeProfile.activity}}</tab>
 		</tabset>
 	</div>
+
 </div>
