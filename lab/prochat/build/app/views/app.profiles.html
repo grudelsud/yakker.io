@@ -1,0 +1,24 @@
+<div class="row-fluid">
+
+	<div class="span3">
+		<table class="table">
+			<tr ng-repeat="miniprofile in profiles">
+				<td>
+					<img ng-src="{{miniprofile.profile.imageUrl}}" class="img-rounded"> 
+					<button href="#" ng-click="viewProfile()">{{miniprofile.displayName}}</button>
+				</td>
+			</tr>
+		</span>
+		</table>
+	</div>
+
+	<div class="span9" ng-show="showProfile">
+		<h4>{{activeProfile.displayName}} details</h4>
+		{{activeProfile.tagline}}
+		<tabset>
+			<tab heading="info">{{activeProfile.profile}}</tab>
+			<tab heading="activity">{{activeProfile.activity}}</tab>
+		</tabset>
+	</div>
+
+</div>
