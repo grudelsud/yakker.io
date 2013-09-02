@@ -20,26 +20,19 @@
 									<div class="widget-box transparent" id="recent-box">
 										<div class="widget-header">
 											<h4 class="lighter smaller">
-												<i class="icon-rss orange"></i>
-												RECENT
+												Contact list
 											</h4>
-
-											<div class="widget-toolbar no-border">
-												<ul class="nav nav-tabs" id="recent-tab">
-													<li class="active">
-														<a data-toggle="tab" href="#member-tab">Members</a>
-													</li>
-
-													<li>
-														<a data-toggle="tab" href="#comment-tab">Comments</a>
-													</li>
-												</ul>
+											<div class="widget-toolbar">
+												<span class="input-icon">
+													<input type="text" placeholder="Filter" class="input-small nav-search-input" id="nav-search-input" autocomplete="off">
+													<i class="icon-search nav-search-icon"></i>
+												</span>
 											</div>
 										</div>
 
 										<div class="widget-body">
 											<div class="widget-main padding-4">
-												<div class="tab-content padding-8 overflow-visible">
+												<div class="tab-content padding-0 overflow-visible">
 													<div id="member-tab" class="tab-pane active">
 														<div class="clearfix">
 															<div class="itemdiv memberdiv">
@@ -501,38 +494,14 @@
 
 								<div id="user-profile-2" class="user-profile row-fluid">
 									<div class="tabbable">
-										<ul class="nav nav-tabs padding-18">
-											<li class="active">
-												<a data-toggle="tab" href="#home">
+
+										<tabset>
+											<tab>
+												<tab-heading>
 													<i class="green icon-user bigger-120"></i>
 													Profile
-												</a>
-											</li>
+												</tab-heading>
 
-											<li>
-												<a data-toggle="tab" href="#feed">
-													<i class="orange icon-rss bigger-120"></i>
-													Activity Feed
-												</a>
-											</li>
-
-											<li>
-												<a data-toggle="tab" href="#friends">
-													<i class="blue icon-group bigger-120"></i>
-													Friends
-												</a>
-											</li>
-
-											<li>
-												<a data-toggle="tab" href="#pictures">
-													<i class="pink icon-picture bigger-120"></i>
-													Pictures
-												</a>
-											</li>
-										</ul>
-
-										<div class="tab-content no-border padding-24">
-											<div id="home" class="tab-pane in active">
 												<div class="row-fluid">
 													<div class="span3 center">
 														<span class="profile-picture">
@@ -761,9 +730,13 @@
 														</div>
 													</div>
 												</div>
-											</div><!--#home-->
+											</tab>
+											<tab>
+												<tab-heading>
+													<i class="orange icon-rss bigger-120"></i>
+													Activity Feed
+												</tab-heading>
 
-											<div id="feed" class="tab-pane">
 												<div class="profile-feed row-fluid">
 													<div class="span6">
 														<div class="profile-activity clearfix">
@@ -1015,9 +988,13 @@
 														<i class="icon-on-right icon-arrow-right"></i>
 													</a>
 												</div>
-											</div><!--/#feed-->
+											</tab>
+											<tab>
+												<tab-heading>
+													<i class="blue icon-group bigger-120"></i>
+													Friends
+												</tab-heading>
 
-											<div id="friends" class="tab-pane">
 												<div class="profile-users clearfix">
 													<div class="itemdiv memberdiv">
 														<div class="inline position-relative">
@@ -1415,9 +1392,13 @@
 														<a href="#">Next &rarr;</a>
 													</li>
 												</ul>
-											</div><!--/#friends-->
+											</tab>
+											<tab>
+												<tab-heading>
+													<i class="pink icon-picture bigger-120"></i>
+													Pictures
+												</tab-heading>
 
-											<div id="pictures" class="tab-pane">
 												<ul class="ace-thumbnails">
 													<li>
 														<a href="#" data-rel="colorbox">
@@ -1635,6 +1616,21 @@
 														</div>
 													</li>
 												</ul>
+											</tab>
+										</tabset>
+
+
+										<div class="tab-content no-border padding-24">
+											<div id="home" class="tab-pane in active">
+											</div><!--#home-->
+
+											<div id="feed" class="tab-pane">
+											</div><!--/#feed-->
+
+											<div id="friends" class="tab-pane">
+											</div><!--/#friends-->
+
+											<div id="pictures" class="tab-pane">
 											</div><!--/#pictures-->
 										</div>
 									</div>

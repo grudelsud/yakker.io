@@ -3,7 +3,7 @@
 *
 * Description
 */
-angular.module('MainApp', []).
+angular.module('MainApp', ['ui.bootstrap']).
 
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
@@ -24,5 +24,5 @@ controller('ContactsCtrl', ['$scope', function($scope) {
 }]).
 
 controller('SummaryCtrl', ['$scope', function($scope) {
-	
+
 }]);
