@@ -15,7 +15,7 @@
 
 							<div class="row-fluid">
 
-								<div class="span4">
+								<div class="span6">
 
 
 									<div class="widget-box transparent" id="recent-box">
@@ -31,172 +31,30 @@
 
 													<div id="comment-tab" class="tab-pane active">
 														<div class="comments">
+
 															<div class="itemdiv commentdiv">
 																<div class="user">
-																	<img alt="Bob Doe's Avatar" src="assets/avatars/avatar.png" />
+																	<img alt="work chat" src="assets/avatars/avatar2.png" />
 																</div>
 
 																<div class="body">
 																	<div class="name">
-																		<a href="#">Bob Doe</a>
-																	</div>
-
-																	<div class="time">
-																		<i class="icon-time"></i>
-																		<span class="green">6 min</span>
-																	</div>
-
-																	<div class="text">
-																		<i class="icon-quote-left"></i>
-																		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
-																	</div>
-																</div>
-
-																<div class="tools">
-																	<div class="inline position-relative">
-																		<button class="btn btn-minier bigger btn-yellow dropdown-toggle" data-toggle="dropdown">
-																			<i class="icon-angle-down icon-only bigger-120"></i>
-																		</button>
-
-																		<ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
-																			<li>
-																				<a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
-																					<span class="green">
-																						<i class="icon-ok bigger-110"></i>
-																					</span>
-																				</a>
-																			</li>
-
-																			<li>
-																				<a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
-																					<span class="orange">
-																						<i class="icon-remove bigger-110"></i>
-																					</span>
-																				</a>
-																			</li>
-
-																			<li>
-																				<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																					<span class="red">
-																						<i class="icon-trash bigger-110"></i>
-																					</span>
-																				</a>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
-															</div>
-
-															<div class="itemdiv commentdiv">
-																<div class="user">
-																	<img alt="Jennifer's Avatar" src="assets/avatars/avatar1.png" />
-																</div>
-
-																<div class="body">
-																	<div class="name">
-																		<a href="#">Jennifer</a>
-																	</div>
-
-																	<div class="time">
-																		<i class="icon-time"></i>
-																		<span class="blue">15 min</span>
-																	</div>
-
-																	<div class="text">
-																		<i class="icon-quote-left"></i>
-																		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
-																	</div>
-																</div>
-
-																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
-																		<i class="icon-only icon-pencil"></i>
-																	</a>
-
-																	<a href="#" class="btn btn-minier btn-danger">
-																		<i class="icon-only icon-trash"></i>
-																	</a>
-																</div>
-															</div>
-
-															<div class="itemdiv commentdiv">
-																<div class="user">
-																	<img alt="Joe's Avatar" src="assets/avatars/avatar2.png" />
-																</div>
-
-																<div class="body">
-																	<div class="name">
-																		<a href="#">Joe</a>
+																		<a href="" ng-click="selectRoom(0)">{{rooms[0].title}}</a>
 																	</div>
 
 																	<div class="time">
 																		<i class="icon-time"></i>
 																		<span class="orange">22 min</span>
 																	</div>
-
 																	<div class="text">
-																		<i class="icon-quote-left"></i>
-																		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+																		Participants: Gianni, Tom
 																	</div>
-																</div>
-
-																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
-																		<i class="icon-only icon-pencil"></i>
-																	</a>
-
-																	<a href="#" class="btn btn-minier btn-danger">
-																		<i class="icon-only icon-trash"></i>
-																	</a>
 																</div>
 															</div>
 
-															<div class="itemdiv commentdiv">
-																<div class="user">
-																	<img alt="Rita's Avatar" src="assets/avatars/avatar3.png" />
-																</div>
-
-																<div class="body">
-																	<div class="name">
-																		<a href="#">Rita</a>
-																	</div>
-
-																	<div class="time">
-																		<i class="icon-time"></i>
-																		<span class="red">50 min</span>
-																	</div>
-
-																	<div class="text">
-																		<i class="icon-quote-left"></i>
-																		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
-																	</div>
-																</div>
-
-																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
-																		<i class="icon-only icon-pencil"></i>
-																	</a>
-
-																	<a href="#" class="btn btn-minier btn-danger">
-																		<i class="icon-only icon-trash"></i>
-																	</a>
-																</div>
-															</div>
+														
 														</div>
 
-														<div class="hr hr8"></div>
-
-														<div class="center">
-															<i class="icon-comments-alt icon-2x green"></i>
-
-															&nbsp;
-															<a href="#">
-																See all comments &nbsp;
-																<i class="icon-arrow-right"></i>
-															</a>
-														</div>
-
-														<div class="hr hr-double hr8"></div>
 													</div>
 												</div>
 											</div><!--/widget-main-->
@@ -207,33 +65,36 @@
 								</div><!--/span-->
 
 
-								<div class="span4">
+								<div class="span6">
 									<div class="widget-box ">
 										<div class="widget-header">
 											<h4 class="lighter smaller">
 												<i class="icon-comment blue"></i>
-												Chat with Alexa
+												{{rooms[0].title}}
 											</h4>
 										</div>
 
 										<div class="widget-body">
 											<div class="widget-main no-padding">
 												<div class="dialogs">
-													<div class="itemdiv dialogdiv">
+													
+													<div ng-repeat="message in rooms[0].messages" class="itemdiv dialogdiv">
 														<div class="user">
-															<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
+															<img ng-src="{{message.imageUrl}}" />
 														</div>
 
 														<div class="body">
 															<div class="time">
 																<i class="icon-time"></i>
-																<span class="green">4 sec</span>
+																<span class="orange">{{message.at}}</span>
 															</div>
 
 															<div class="name">
-																<a href="#">Alexa</a>
+																<a href="#">{{message.displayName}}</a>
+																<span class="label label-info arrowed arrowed-in-right">{{message.role}}</span>
+																<span class="badge" ng-repeat="tag in message.tags">{{tag}}</span>
 															</div>
-															<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
+															<div class="text">{{message.body}}</div>
 
 															<div class="tools">
 																<a href="#" class="btn btn-minier btn-info">
@@ -242,109 +103,13 @@
 															</div>
 														</div>
 													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="John's Avatar" src="assets/avatars/avatar.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="blue">38 sec</span>
-															</div>
-
-															<div class="name">
-																<a href="#">John</a>
-															</div>
-															<div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Gianni's Avatar" src="assets/avatars/user.jpg" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="orange">2 min</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Gianni</a>
-																<span class="label label-info arrowed arrowed-in-right">admin</span>
-															</div>
-															<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Jim's Avatar" src="assets/avatars/avatar4.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="grey">3 min</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Jim</a>
-															</div>
-															<div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="green">4 min</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Alexa</a>
-															</div>
-															<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
+													<div class="itemdiv dialogdiv" id="bottom"></div>													
 												</div>
 
-												<form>
+												<form ng-submit="send()">
 													<div class="form-actions input-append">
-														<input placeholder="Type your message here ..." type="text" class="width-75" name="message" />
-														<button class="btn btn-small btn-info no-radius" onclick="return false;">
+														<input placeholder="Type your message here ..." type="text" class="width-75" name="message" ng-model="message" />
+														<button class="btn btn-small btn-info no-radius">
 															<i class="icon-share-alt"></i>
 															<span class="hidden-phone">Send</span>
 														</button>
@@ -355,153 +120,7 @@
 									</div><!--/widget-box-->
 								</div><!--/span-->
 
-								<div class="span4">
-									<div class="widget-box ">
-										<div class="widget-header">
-											<h4 class="lighter smaller">
-												<i class="icon-comment blue"></i>
-												Project Test
-											</h4>
-										</div>
 
-										<div class="widget-body">
-											<div class="widget-main no-padding">
-												<div class="dialogs">
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="green">4 sec</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Alexa</a>
-															</div>
-															<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="John's Avatar" src="assets/avatars/avatar.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="blue">38 sec</span>
-															</div>
-
-															<div class="name">
-																<a href="#">John</a>
-															</div>
-															<div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Gianni's Avatar" src="assets/avatars/user.jpg" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="orange">2 min</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Gianni</a>
-																<span class="label label-info arrowed arrowed-in-right">admin</span>
-															</div>
-															<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Jim's Avatar" src="assets/avatars/avatar4.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="grey">3 min</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Jim</a>
-															</div>
-															<div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-
-													<div class="itemdiv dialogdiv">
-														<div class="user">
-															<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
-														</div>
-
-														<div class="body">
-															<div class="time">
-																<i class="icon-time"></i>
-																<span class="green">4 min</span>
-															</div>
-
-															<div class="name">
-																<a href="#">Alexa</a>
-															</div>
-															<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-															<div class="tools">
-																<a href="#" class="btn btn-minier btn-info">
-																	<i class="icon-only icon-share-alt"></i>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<form>
-													<div class="form-actions input-append">
-														<input placeholder="Type your message here ..." type="text" class="width-75" name="message" />
-														<button class="btn btn-small btn-info no-radius" onclick="return false;">
-															<i class="icon-share-alt"></i>
-															<span class="hidden-phone">Send</span>
-														</button>
-													</div>
-												</form>
-											</div><!--/widget-main-->
-										</div><!--/widget-body-->
-									</div><!--/widget-box-->
-								</div><!--/span-->
 
 							</div><!--/row-->
 
