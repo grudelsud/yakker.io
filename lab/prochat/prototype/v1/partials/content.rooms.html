@@ -15,7 +15,7 @@
 
 							<div class="row-fluid">
 
-								<div class="span6">
+								<div class="span4">
 
 
 									<div class="widget-box transparent" id="recent-box">
@@ -32,29 +32,28 @@
 													<div id="comment-tab" class="tab-pane active">
 														<div class="comments">
 
-															<div class="itemdiv commentdiv">
-																<div class="user">
-																	<img alt="work chat" src="assets/avatars/avatar2.png" />
+															<div ng-repeat="room in rooms" class="itemdiv commentdiv">
+																<div class="name">
+																	<a href="" ng-click="selectRoom($index)">{{room.title}}</a>
 																</div>
-
-																<div class="body">
-																	<div class="name">
-																		<a href="" ng-click="selectRoom(0)">{{rooms[0].title}}</a>
-																	</div>
-
-																	<div class="time">
-																		<i class="icon-time"></i>
-																		<span class="orange">22 min</span>
-																	</div>
-																	<div class="text">
-																		Participants: Gianni, Tom
-																	</div>
+																<div class="text">
+																	<i class="icon-group"></i>
+																	<span ng-repeat="bot in bots">{{bot.displayName}}, </span>
 																</div>
 															</div>
-
 														
 														</div>
 
+													</div>
+												</div>
+
+												<div class="widget-toolbox">
+													<div class="btn-toolbar">
+														<div class="btn-group">
+															<button class="btn btn-small">action 1</button>
+															<button class="btn btn-small">action 2</button>
+															<button class="btn btn-small">action 3</button>
+														</div>
 													</div>
 												</div>
 											</div><!--/widget-main-->
@@ -65,12 +64,12 @@
 								</div><!--/span-->
 
 
-								<div class="span6">
-									<div class="widget-box ">
+								<div class="span8">
+									<div ng-repeat="room in rooms" class="widget-box" ng-show="$index == indexSelected">
 										<div class="widget-header">
 											<h4 class="lighter smaller">
 												<i class="icon-comment blue"></i>
-												{{rooms[0].title}}
+												{{rooms[$index].title}}
 											</h4>
 										</div>
 
@@ -78,7 +77,7 @@
 											<div class="widget-main no-padding">
 												<div class="dialogs">
 													
-													<div ng-repeat="message in rooms[0].messages" class="itemdiv dialogdiv">
+													<div ng-repeat="message in rooms[$index].messages" class="itemdiv dialogdiv">
 														<div class="user">
 															<img ng-src="{{message.imageUrl}}" />
 														</div>
@@ -106,9 +105,18 @@
 													<div class="itemdiv dialogdiv" id="bottom"></div>													
 												</div>
 
+												<div class="widget-toolbox">
+													<div class="btn-toolbar">
+														<div class="btn-group">
+															<button class="btn btn-small">action 1</button>
+															<button class="btn btn-small">action 2</button>
+															<button class="btn btn-small">action 3</button>
+														</div>
+													</div>
+												</div>
 												<form ng-submit="send()">
 													<div class="form-actions input-append">
-														<input placeholder="Type your message here ..." type="text" class="width-75" name="message" ng-model="message" />
+														<input placeholder="Type your message here ..." type="text" class="width-75" name="message" ng-model="message[$index]" />
 														<button class="btn btn-small btn-info no-radius">
 															<i class="icon-share-alt"></i>
 															<span class="hidden-phone">Send</span>

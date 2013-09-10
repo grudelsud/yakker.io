@@ -13,28 +13,64 @@ config(['$routeProvider', function($routeProvider) {
 		otherwise({redirectTo: '/rooms'});
 }]).
 
-controller('RoomsCtrl', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll) {
+controller('RoomsCtrl', ['$scope', '$location', '$anchorScroll', '$timeout', function($scope, $location, $anchorScroll, $timeout) {
 	$scope.title = 'Rooms';
 	$scope.subtitle = 'ongoing conversations';
-	$scope.rooms = [{
-		"title": "Agency #123 on proj. Alpha",
-		"messages": [
-			{
-				"imageUrl": "assets/avatars/user.jpg",
-				"displayName": "gianni",
-				"role": "owner",
-				"at": "4 min ago",
-				"body": "it would be really clever if we could add a simple file versioning tool"
-			},
-			{
-				"imageUrl": "assets/avatars/avatar4.png",
-				"displayName": "tom",
-				"role": "admin",
-				"at": "2 min ago",
-				"body": "yeah, I'm writing a snippet that connects to a project repo and stores everything there so we can use github's versioning"
-			}
-		]
-	}];
+
+	$scope.indexSelected = 0;
+	$scope.message = [];
+
+	$scope.bots = [
+		{
+			"displayName": "tom",
+			"imageUrl": "assets/avatars/avatar4.png"
+		},
+		{
+			"displayName": "bobby estates",
+			"imageUrl": "assets/avatars/avatar1.png"
+		}
+	];
+	$scope.rooms = [
+		{
+			"title": "Agency #123 on proj. Alpha",
+			"messages": [
+				{
+					"imageUrl": "assets/avatars/user.jpg",
+					"displayName": "gianni",
+					"role": "owner",
+					"at": "4 min ago",
+					"body": "it would be really clever if we could add a simple file versioning tool"
+				},
+				{
+					"imageUrl": $scope.bots[0].imageUrl,
+					"displayName": $scope.bots[0].displayName,
+					"role": "admin",
+					"at": "2 min ago",
+					"body": "yeah, I'm writing a snippet that connects to a project repo and stores everything there so we can use github's versioning"
+				}
+			]
+		},{
+			"title": "To buy or not to buy?",
+			"messages": [
+				{
+					"imageUrl": "assets/avatars/user.jpg",
+					"displayName": "gianni",
+					"role": "owner",
+					"at": "4 min ago",
+					"body": "so is it something really interesting?"
+				},
+				{
+					"imageUrl": $scope.bots[1].imageUrl,
+					"displayName": $scope.bots[1].displayName,
+					"role": "",
+					"at": "2 min ago",
+					"body": "you should see it, bathtubs everywhere, even in the garden shed..."
+				}
+			]
+		}
+	];
+
+	$location.hash('bottom');
 
 	var createTags = function(text) {
 		var _text = text.split(' ');
@@ -48,7 +84,7 @@ controller('RoomsCtrl', ['$scope', '$location', '$anchorScroll', function($scope
 	}
 
 	$scope.selectRoom = function(index) {
-		console.log('room selected', index);
+		$scope.indexSelected = index;
 	}
 
 	$scope.send = function() {
@@ -57,13 +93,26 @@ controller('RoomsCtrl', ['$scope', '$location', '$anchorScroll', function($scope
 			"displayName": "gianni",
 			"role": "owner",
 			"at": "now",
-			"body": $scope.message,
-			"tags": createTags($scope.message)
+			"body": $scope.message[$scope.indexSelected],
+			"tags": createTags($scope.message[$scope.indexSelected])
 		}
-		$scope.rooms[0].messages.push(newMessage);
-		$scope.message = '';
-		$location.hash('bottom');
+		$scope.rooms[$scope.indexSelected].messages.push(newMessage);
+		$scope.message[$scope.indexSelected] = '';
 		$anchorScroll();
+
+		$timeout(function() {
+			var newMessage = {
+				"imageUrl": $scope.bots[$scope.indexSelected].imageUrl,
+				"displayName": $scope.bots[$scope.indexSelected].displayName,
+				"role": "admin",
+				"at": "now",
+				"body": "I see what you mean, let me thing about it, ok?",
+				"tags": []
+			}
+			$scope.rooms[$scope.indexSelected].messages.push(newMessage);
+			$anchorScroll();
+
+		}, 400);
 	}
 }]).
 
