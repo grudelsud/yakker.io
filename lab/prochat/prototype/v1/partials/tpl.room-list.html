@@ -1,0 +1,41 @@
+<div class="widget-box transparent" id="recent-box">
+	<div class="widget-header">
+		<h4 class="lighter smaller">
+			Active Rooms
+		</h4>
+	</div>
+
+	<div class="widget-body">
+		<div class="widget-main padding-4">
+			<div class="tab-content padding-8 overflow-visible">
+
+				<div id="comment-tab" class="tab-pane active">
+					<div class="comments">
+
+						<div ng-repeat="room in rooms" class="itemdiv commentdiv">
+							<div class="name">
+								<a href="" ng-click="selectRoom()">{{room.name}}</a>
+							</div>
+							<div class="text">
+								<i class="icon-group"></i>
+								<span ng-repeat="participant in room.participants">{{participant.displayName}}, </span>
+							</div>
+						</div>
+					
+					</div>
+
+				</div>
+			</div>
+
+			<div class="widget-toolbox">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<button class="btn btn-small">action 1</button>
+						<button class="btn btn-small">action 2</button>
+						<button class="btn btn-small">action 3</button>
+					</div>
+				</div>
+			</div>
+		</div><!--/widget-main-->
+	</div><!--/widget-body-->
+</div><!--/widget-box-->

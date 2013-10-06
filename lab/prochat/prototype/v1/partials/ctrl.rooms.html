@@ -1,0 +1,36 @@
+<div class="page-content">
+	<div class="page-header position-relative">
+		<h1>
+			{{title}}
+			<small>
+				<i class="icon-double-angle-right"></i>
+				{{subtitle}}
+			</small>
+		</h1>
+	</div><!--/.page-header-->
+
+	<div class="row-fluid">
+		<div class="span12">
+			<!--PAGE CONTENT BEGINS-->
+
+			<div class="row-fluid">
+
+				<div class="span4">
+					<room-list></room-list>
+				</div><!--/span-->
+
+
+				<div class="span8">
+					<span ng-repeat="room in rooms">
+						<span ng-show="activeRoom == room.id">
+							<chat-room ng-model="room.id"></chat-room>
+						</span>
+					</span>
+				</div><!--/span-->
+
+			</div><!--/row-->
+
+			<!--PAGE CONTENT ENDS-->
+		</div><!--/.span-->
+	</div><!--/.row-fluid-->
+</div><!--/.page-content-->

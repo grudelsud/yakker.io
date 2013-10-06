@@ -1,0 +1,33 @@
+<div class="col-xs-12 col-sm-9">
+	<ng-include src="'partials/inc.crumbs.html'"></ng-include>
+
+	<div class="row">
+		<div class="col-xs-6 col-sm-4">
+			<div class="widget-box">
+				<div class="widget-header">
+					<h4 class="lighter smaller">
+						Active Contacts
+					</h4>
+				</div>
+
+				<div class="widget-body">
+					<div class="items contacts">
+						<div ng-repeat="contact in contacts">
+							<div class="name">
+								<a href="" ng-click="selectContact()">{{contact.displayName}}</a>, {{contact.tagline}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-8">
+			<carousel interval="-1">
+				<slide ng-repeat="contact in contacts" class="contact-box" id="contact-box-{{contact.id}}" active="contact.active">
+					<contact-detail ng-model="contact.id"></contact-detail>
+				</slide>
+			</carousel>
+		</div>
+	</div>
+</div>

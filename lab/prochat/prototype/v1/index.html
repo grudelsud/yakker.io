@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MainApp">
+<html lang="en" ng-app="protoApp">
 	<head>
 		<meta charset="utf-8" />
 		<title>Pro Chat</title>
@@ -28,6 +28,7 @@
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
 		<style>
 			.dialogs { height: 400px; overflow-y: scroll; }
 		</style>
@@ -40,16 +41,19 @@
 
 		<!--ace settings handler-->
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="lib/jquery/jquery-2.0.3.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-resource.js"></script>
 
-		<script src="lib/angular-ui-bootstrap/ui-bootstrap-0.5.0.js"></script>
-		<script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.5.0.js"></script>
+		<script src="lib/angular-ui-bootstrap/ui-bootstrap-0.4.0.js"></script>
+		<script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
 
 		<script src="assets/js/ace-extra.min.js"></script>
 		<script src="app/main.js"></script>
+		<script src="app/services.js"></script>
+		<script src="app/directives.js"></script>
 	</head>
 
 	<body>

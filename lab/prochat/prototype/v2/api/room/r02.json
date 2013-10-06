@@ -1,0 +1,26 @@
+{
+	"title": "To buy or not to buy?",
+	"id": "r02",
+	"messages": [
+		{
+			"id": "r02m0001",
+			"at": "4 min ago",
+			"type": "text",
+			"fromId": "p02",
+			"displayName": "gianni",
+			"imageUrl": "assets/avatars/user.jpg",
+			"role": "owner",
+			"body": "so is it something really interesting?"
+		},
+		{
+			"id": "r02m0002",
+			"at": "4 min ago",
+			"type": "text",
+			"fromId": "p03",
+			"displayName": "bobby estates",
+			"imageUrl": "assets/avatars/avatar1.png",
+			"role": "",
+			"body": "you should see it, bathtubs everywhere, even in the garden shed..."
+		}
+	]
+}

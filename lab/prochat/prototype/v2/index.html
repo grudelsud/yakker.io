@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="protoApp">
+<head>
+	<title>{{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<ng-include src="'partials/inc.top.html'"></ng-include>
+
+	<div id="main" class="container">
+
+		<div class="row row-offcanvas row-offcanvas-right">
+
+			<ng-view></ng-view>
+			<ng-include src="'partials/inc.side.html'"></ng-include>
+
+		</div>
+
+		<hr>
+		<ng-include src="'partials/inc.footer.html'"></ng-include>
+	</div>
+
+	<script src="assets/lib/jquery/jquery-2.0.3.js"></script>
+	<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="assets/lib/angular/angular.js"></script>
+	<script src="assets/lib/angular/angular-route.js"></script>
+	<script src="assets/lib/angular/angular-resource.js"></script>
+
+	<script src="assets/lib/angular-ui-bootstrap/ui-bootstrap-0.4.0.js"></script>
+	<script src="assets/lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+
+	<script src="assets/js/app/main.js"></script>
+	<script src="assets/js/app/services.js"></script>
+	<script src="assets/js/app/directives.js"></script>
+</body>
+</html>

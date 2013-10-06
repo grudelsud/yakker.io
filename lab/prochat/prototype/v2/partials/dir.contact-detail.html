@@ -1,0 +1,62 @@
+<div>	
+	<tabset>
+		<tab>
+
+			<tab-heading>
+				{{contactData.displayName}}
+			</tab-heading>
+
+			<div class="widget-body">
+
+				<div class="user">
+					<img ng-src="{{contactData.profile.imageUrl}}" />
+					{{contactData.profile.name.givenName}} {{contactData.profile.name.familyName}} {{contactData.tagline}}
+				</div>
+
+				<div class="email">
+					<ul>
+						<li>{{contactData.profile.email.work}}</li>
+						<li>{{contactData.profile.email.personal}}</li>
+					</ul>
+				</div>
+				<div class="phone">
+					<ul>
+						<li>{{contactData.profile.phone.work}}</li>
+						<li>{{contactData.profile.phone.mobile}}</li>
+					</ul>
+				</div>
+				<div ng-repeat="organization in contactData.profile.organizations" class="organizations">
+					<ul>
+						<li>{{organization.company}}, {{organization.location}}</li>
+						<li>{{organization.role}}</li>
+					</ul>
+				</div>
+
+			</div>
+		</tab>
+
+		<tab>
+			<tab-heading>
+				Activity
+			</tab-heading>
+
+			Content
+		</tab>
+
+		<tab>
+			<tab-heading>
+				Files
+			</tab-heading>
+
+			Content
+		</tab>
+
+		<tab>
+			<tab-heading>
+				Tags
+			</tab-heading>
+
+			Content
+		</tab>
+	</tabset>
+</div>

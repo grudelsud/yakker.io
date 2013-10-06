@@ -1,0 +1,78 @@
+<div>	
+	<tabset>
+		<tab>
+
+			<tab-heading>
+				<i class="icon-comment blue"></i>
+				{{roomData.title}}
+			</tab-heading>
+
+			<div class="widget-body">
+				<div class="conversation" id="conversation-{{roomData.id}}">	
+					<div ng-repeat="message in roomData.messages">
+
+						<div class="user">
+							<img ng-src="{{message.imageUrl}}" />
+						</div>
+
+						<div class="body" id="{{message.id}}">
+							<div class="time">
+								<i class="icon-time"></i>
+								<span class="orange">{{message.at}}</span>
+							</div>
+
+							<div class="name">
+								<a href="#/contacts#{{message.fromId}}">{{message.displayName}}</a>
+								<span class="label label-info">{{message.role}}</span>
+								<span class="badge" ng-repeat="tag in message.tags">{{tag}}</span>
+							</div>
+
+							<div class="text">{{message.body}}</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="widget-toolbox">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">invite</button>
+					<button type="button" class="btn btn-default">send</button>
+					<button type="button" class="btn btn-default">summarize</button>
+				</div>
+
+				<form class="form-inline" role="form" ng-submit="send()">
+					<div class="form-group">
+						<input placeholder="Type your message here ..." type="text" class="form-control" ng-model="msgInput[roomData.id]" />
+					</div>
+					<button type="submit" class="btn btn-default">Send</button>
+				</form>
+			</div>
+
+		</tab>
+
+		<tab>
+			<tab-heading>
+				Timeline
+			</tab-heading>
+
+			Content
+		</tab>
+
+		<tab>
+			<tab-heading>
+				Files
+			</tab-heading>
+
+			Content
+		</tab>
+
+		<tab>
+			<tab-heading>
+				Tags
+			</tab-heading>
+
+			Content
+		</tab>
+	</tabset>
+</div>

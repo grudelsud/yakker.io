@@ -1,0 +1,31 @@
+[
+	{
+		"id": "r01",
+		"name": "Agency #123 on proj. Alpha",
+		"type": "private",
+		"lastactivity": "2013/08/25 12:12:12",
+		"participants": [
+			{ "id": "p01", "displayName": "tom" },
+			{ "id": "p02", "displayName": "gianni" }
+		]
+	},
+	{
+		"id": "r02",
+		"name": "To buy or not to buy?",
+		"type": "private",
+		"lastactivity": "2013/08/24 12:12:12",
+		"participants": [
+			{ "id": "p02", "displayName": "gianni" },
+			{ "id": "p03", "displayName": "bobby estates" }
+		]
+	},
+	{
+		"id": "r03",
+		"name": "Your fav stock consultant",
+		"type": "subscription",
+		"lastactivity": "2013/08/24 12:12:12",
+		"participants": [
+			{ "id": "p04", "displayName": "rudolph the asset manager" }
+		]
+	}
+]

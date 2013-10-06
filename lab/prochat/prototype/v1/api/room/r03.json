@@ -1,0 +1,16 @@
+{
+	"title": "Your fav stock consultant",
+	"id": "r03",
+	"messages": [
+		{
+			"id": "r03m0001",
+			"at": "3 days ago",
+			"type": "text",
+			"fromId": "p04",
+			"displayName": "rudolph the asset manager",
+			"imageUrl": "assets/avatars/avatar5.png",
+			"role": "publisher",
+			"body": "you should buy as much carrots as possible now that their season is coming to an end"
+		}
+	]
+}

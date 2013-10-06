@@ -1,0 +1,26 @@
+{
+	"title": "Agency #123 on proj. Alpha",
+	"id": "r01",
+	"messages": [
+		{
+			"id": "r01m0001",
+			"at": "4 min ago",
+			"type": "text",
+			"fromId": "p02",
+			"displayName": "gianni",
+			"imageUrl": "assets/avatars/user.jpg",
+			"role": "owner",
+			"body": "it would be really clever if we could add a simple file versioning tool"
+		},
+		{
+			"id": "r01m0002",
+			"at": "3 min ago",
+			"type": "text",
+			"fromId": "p01",
+			"displayName": "tom",
+			"imageUrl": "assets/avatars/avatar4.png",
+			"role": "admin",
+			"body": "yeah, I'm writing a snippet that connects to a project repo and stores everything there so we can use github's versioning"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+[
+	{
+		"id": "p01",
+		"displayName": "Tom",
+		"tagline": "I'm a searcher"
+	},
+	{
+		"id": "p02",
+		"displayName": "Gianni",
+		"tagline": "I'm a finder"
+	}
+]

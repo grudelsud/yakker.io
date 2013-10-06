@@ -1,0 +1,61 @@
+<div class="widget-box">
+	<div class="widget-header">
+		<h4 class="lighter smaller">
+			<i class="icon-comment blue"></i>
+			{{roomData.title}}
+		</h4>
+	</div>
+
+	<div class="widget-body">
+		<div class="widget-main no-padding">
+			<div class="dialogs" id="{{roomData.id}}">
+				
+				<div ng-repeat="message in roomData.messages" class="itemdiv dialogdiv">
+					<div class="user">
+						<img ng-src="{{message.imageUrl}}" />
+					</div>
+
+					<div class="body" id="{{message.id}}">
+						<div class="time">
+							<i class="icon-time"></i>
+							<span class="orange">{{message.at}}</span>
+						</div>
+
+						<div class="name">
+							<a href="#/contacts#{{message.fromId}}">{{message.displayName}}</a>
+							<span class="label label-info arrowed arrowed-in-right">{{message.role}}</span>
+							<span class="badge" ng-repeat="tag in message.tags">{{tag}}</span>
+						</div>
+						<div class="text">{{message.body}}</div>
+
+						<div class="tools">
+							<a href="#" class="btn btn-minier btn-info">
+								<i class="icon-only icon-share-alt"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="itemdiv dialogdiv" id="bottom"></div> -->
+			</div>
+
+			<div class="widget-toolbox">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<button class="btn btn-small">action 1</button>
+						<button class="btn btn-small">action 2</button>
+						<button class="btn btn-small">action 3</button>
+					</div>
+				</div>
+			</div>
+			<form ng-submit="send()">
+				<div class="form-actions input-append">
+					<input placeholder="Type your message here ..." type="text" class="width-75" name="message" ng-model="message" />
+					<button class="btn btn-small btn-info no-radius">
+						<i class="icon-share-alt"></i>
+						<span class="hidden-phone">Send</span>
+					</button>
+				</div>
+			</form>
+		</div><!--/widget-main-->
+	</div><!--/widget-body-->
+</div><!--/widget-box-->

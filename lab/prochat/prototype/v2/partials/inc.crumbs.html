@@ -1,0 +1,6 @@
+<ol class="breadcrumb" ng-controller="CrumbsCtrl">
+	<li ng-repeat="crumb in crumbs" ng-class="crumb.classes">
+		<i ng-class="crumb.icon"></i>
+		<a href="{{crumb.location}}">{{crumb.name}}</a>
+	</li>
+</ol>

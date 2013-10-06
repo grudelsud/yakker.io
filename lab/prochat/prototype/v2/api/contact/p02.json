@@ -1,0 +1,35 @@
+{
+	"id": "p02",
+	"displayName": "Gianni",
+	"tagline": "I'm a finder",
+	"profile": {
+		"name": {
+			"givenName": "Gianni",
+			"familyName": "Lorenzato"
+		},
+		"organizations": [
+			{
+				"company": "Prochat",
+				"location": "SFBA",
+				"role": "CEO"
+			},
+			{
+				"company": "Taconic Capital",
+				"location": "London",
+				"role": "Investment director"
+			}
+		],
+		"imageUrl": "http://placehold.it/50x50",
+		"email": {
+			"work": "three@email.com",
+			"personal": "four@email.com"
+		},
+		"phone": {
+			"work": "+1 555 1000",
+			"mobile": "+1 777 1000"
+		}
+	},
+	"activity": {
+
+	}
+}
