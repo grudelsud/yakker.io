@@ -1,8 +1,8 @@
 <span ng-controller="SideNavCtrl">
-	<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" ng-hide="!status.signedIn">
-		<div class="well sidebar-nav">
+	<div class=" col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" ng-hide="!status.signedIn">
+		<div class="sidebar-nav">
 			<ul class="nav nav-pills nav-stacked">
-				<li ng-repeat="item in sideItems" ng-class="">
+				<li ng-repeat="item in sideItems" ng-class="classes()">
 					<a href="{{item.location}}">
 						<i class="{{item.icon}}"></i>
 						<span class="menu-text"> {{item.name}} </span>

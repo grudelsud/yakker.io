@@ -9,12 +9,17 @@
 
 .widget-body {
 	height: 400px;
+	overflow-y: scroll;
 	border: 1px solid #ddd;
 	border-width: 0 1px 1px;
-	margin-bottom: 3px;
 	padding: 5px;
+}
+
+.widget-body .item {
+	margin-bottom: 10px;
 }
 
 .widget-toolbox {
 	background: #ddd;
+	padding: 3px;
 }

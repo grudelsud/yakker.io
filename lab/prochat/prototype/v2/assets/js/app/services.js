@@ -15,6 +15,13 @@ factory('userData', function() {
 }).
 
 factory('navData', function() {
+	var home = {
+		'location': '#',
+		'name': 'Home',
+		'icon': 'icon-home',
+		'classes': ['active']
+	};
+
 	return {
 		sideItems: [
 			{
@@ -42,12 +49,24 @@ factory('navData', function() {
 				'classes': []
 			}
 		],
-		crumbs: [{
-			'location': '#',
-			'name': 'Home',
-			'icon': 'icon-home',
-			'classes': ['active']
-		}]
+		crumbsSet: function(path) {
+			var pathElems = path.split('/');
+			var crumbs = [home];
+			if (pathElems.length > 0) {
+				home.classes = [];
+			}
+			for (var pathIndex in pathElems) {
+				if (pathElems[pathIndex].length) {
+					var path = pathElems[pathIndex];
+					var crumb = {'location': '#/' + path, 'name': path[0].toUpperCase() + path.slice(1), 'icon': '', 'classes': []};
+					if (pathIndex == pathElems.length - 1) {
+						crumb.classes.push('active');
+					}
+					crumbs.push(crumb);
+				}
+			}
+			return crumbs;
+		}
 	}
 }).
 
@@ -62,14 +81,31 @@ factory('roomData', function($resource) {
 factory('nlp', function() {
 	return {
 		createTags: function(text) {
-			var _text = text.split(' ');
-			if (_text.length > 3) {
-				var index = Math.floor(_text.length * Math.random());
-				return [_text[index]];
+			var stopWords = ['is', 'and', 'the', 'a', 'if', 'me', 'that', 'can', 'be', 'we', 'you', 'here', 'there'];
+			var textElems = text.split(' ');
+			var tags = [];
+
+			for (var textIndex in textElems) {
+				var word = textElems[textIndex];
+				if (word[0] == '#') {
+					tags.push(word.slice(1));
+					continue;
+				}
+				if (word[0].toUpperCase() == word[0]) {
+					tags.push(word);
+					continue;
+				}
 			}
-			else {
-				return [];
+
+			if (textElems.length > 3) {
+				var textIndex = Math.floor(textElems.length * Math.random());
+				var word = textElems[textIndex];
+				if (word.length > 2 && word[0] != '#' && stopWords.indexOf(word.toLowerCase()) == -1) {
+					tags.push(word);
+				}
 			}
+
+			return tags;
 		}
 	}
 });

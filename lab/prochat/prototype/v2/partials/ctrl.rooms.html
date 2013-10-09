@@ -1,45 +1,47 @@
-<div class="col-xs-12 col-sm-9">
+<div class=" col-sm-9">
 	<ng-include src="'partials/inc.crumbs.html'"></ng-include>
 
 	<div class="row">
-		<div class="col-xs-6 col-sm-4">
-			<div class="widget-box">
-				<div class="widget-header">
-					<h4 class="lighter smaller">
-						Active Rooms
-					</h4>
-				</div>
+		<div class=" col-sm-4">
 
-				<div class="widget-toolbox">
-					<div class="btn-group">
-						<button type="button" class="btn btn-default">new</button>
-						<button type="button" class="btn btn-default">broadcast</button>
-					</div>
-				</div>
+			<div class="widget-header">
+				<h4 class="lighter smaller">
+					Active Rooms
+				</h4>
+			</div>
 
-				<div class="widget-body">
-					<div class="items rooms">
-						<div ng-repeat="room in rooms" class="itemdiv commentdiv">
-							<div class="name">
-								<a href="" ng-click="selectRoom()">{{room.name}}</a>
-							</div>
-							<div class="text">
-								<i class="icon-group"></i>
-								<span ng-repeat="participant in room.participants">{{participant.displayName}}, </span>
-							</div>
-						</div>
-					</div>
+			<div class="widget-toolbox">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default btn-xs"><i class="icon-plus-sign-alt"></i> create</button>
+					<button type="button" class="btn btn-default btn-xs"><i class="icon-bullhorn"></i> broadcast</button>
 				</div>
 			</div>
+
+			<div class="widget-body">
+
+				<!-- repeat .item -->
+				<div ng-repeat="room in rooms" class="item">
+					<div class="name">
+						<a href="" ng-click="selectRoom()">{{room.name}}</a>
+					</div>
+					<div class="text">
+						<i class="icon-group"></i>
+						<span ng-repeat="participant in room.participants">{{participant.displayName}}, </span>
+					</div>
+				</div>
+
+			</div>
+			
 		</div>
 
-		<div class="col-xs-12 col-sm-8">
+		<div class=" col-sm-8">
 			<carousel interval="-1">
 				<slide ng-repeat="room in rooms" class="room-box" id="room-box-{{room.id}}" active="room.active">
 					<chat-room ng-model="room.id"></chat-room>
 				</slide>
 			</carousel>
 		</div>
+
 	</div>
 
 </div>

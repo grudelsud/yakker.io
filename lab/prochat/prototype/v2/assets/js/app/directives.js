@@ -36,7 +36,7 @@ directive('chatRoom', ['roomData', 'nlp', '$timeout', '$location', '$anchorScrol
 
 				var newMessage = {
 					"id": messageId,
-					"at": "now",
+					"at": Date(),
 					"type": "text",
 					"fromId": "p02",
 					"displayName": "gianni",
@@ -53,7 +53,7 @@ directive('chatRoom', ['roomData', 'nlp', '$timeout', '$location', '$anchorScrol
 					var messageId = "r0" + $scope.roomId + "m00" + $scope.roomData.messages.length;
 					var newMessage = {
 						"id": messageId,
-						"at": "now",
+						"at": Date(),
 						"type": "text",
 						"fromId": "p00",
 						"displayName": "bot",
@@ -65,9 +65,8 @@ directive('chatRoom', ['roomData', 'nlp', '$timeout', '$location', '$anchorScrol
 					$scope.roomData.messages.push(newMessage);
 					$scope.msgInput[$scope.roomId] = '';
 
-					// nasty fix, needs rewriting
-					jQuery('#' + $scope.roomData.id).scrollTop(10000);
-
+					$location.hash(messageId);
+					$anchorScroll();
 				}, 400);
 			}
 		}

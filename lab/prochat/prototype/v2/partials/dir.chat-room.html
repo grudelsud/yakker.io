@@ -8,26 +8,26 @@
 			</tab-heading>
 
 			<div class="widget-body">
-				<div class="conversation" id="conversation-{{roomData.id}}">	
-					<div ng-repeat="message in roomData.messages">
+				<div class="conversation" id="conversation-{{roomData.id}}">
 
-						<div class="user">
-							<img ng-src="{{message.imageUrl}}" />
+					<!-- repeat .item -->
+					<div ng-repeat="message in roomData.messages" class="item">
+
+						<div class="row">
+							<div class="col-sm-12">
+								<small><a href="#/contacts#{{message.fromId}}">{{message.displayName}}</a> <span class="label label-info">{{message.role}}</span></small>
+							</div>
 						</div>
-
-						<div class="body" id="{{message.id}}">
-							<div class="time">
-								<i class="icon-time"></i>
-								<span class="orange">{{message.at}}</span>
+						<div class="row">
+							<div class="user col-sm-2">
+								<img ng-src="{{message.imageUrl}}" />
 							</div>
-
-							<div class="name">
-								<a href="#/contacts#{{message.fromId}}">{{message.displayName}}</a>
-								<span class="label label-info">{{message.role}}</span>
-								<span class="badge" ng-repeat="tag in message.tags">{{tag}}</span>
+							<div class="body col-sm-10" id="{{message.id}}">
+								<div class="text">{{message.body}}</div>
+								<div class="meta text-muted">
+									<small><i class="icon-time"></i> {{message.at}} <span class="badge" ng-repeat="tag in message.tags">{{tag}}</span></small>
+								</div>
 							</div>
-
-							<div class="text">{{message.body}}</div>
 						</div>
 
 					</div>
@@ -36,16 +36,17 @@
 
 			<div class="widget-toolbox">
 				<div class="btn-group">
-					<button type="button" class="btn btn-default">invite</button>
-					<button type="button" class="btn btn-default">send</button>
-					<button type="button" class="btn btn-default">summarize</button>
+					<button type="button" class="btn btn-default btn-xs"><i class="icon-plus-sign-alt"></i> invite</button>
+					<button type="button" class="btn btn-default btn-xs"><i class="icon-envelope"></i> summarize</button>
 				</div>
 
 				<form class="form-inline" role="form" ng-submit="send()">
 					<div class="form-group">
-						<input placeholder="Type your message here ..." type="text" class="form-control" ng-model="msgInput[roomData.id]" />
+						<input placeholder="Type your message here ..." type="text" class="form-control input-sm" ng-model="msgInput[roomData.id]" />
 					</div>
-					<button type="submit" class="btn btn-default">Send</button>
+					<div class="form-group">
+						<button type="submit" class="btn btn-default btn-sm">Send</button>
+					</div>
 				</form>
 			</div>
 
@@ -56,7 +57,9 @@
 				Timeline
 			</tab-heading>
 
-			Content
+			<div class="widget-body">
+				Content
+			</div>
 		</tab>
 
 		<tab>
@@ -64,7 +67,9 @@
 				Files
 			</tab-heading>
 
-			Content
+			<div class="widget-body">
+				Content
+			</div>
 		</tab>
 
 		<tab>
@@ -72,7 +77,9 @@
 				Tags
 			</tab-heading>
 
-			Content
+			<div class="widget-body">
+				Content
+			</div>
 		</tab>
 	</tabset>
 </div>

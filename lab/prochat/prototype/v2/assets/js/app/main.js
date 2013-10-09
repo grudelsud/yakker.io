@@ -10,15 +10,23 @@ controller('TopNavCtrl', ['$scope', 'userData', function($scope, userData) {
 	$scope.user = userData.user;
 }]).
 
-controller('SideNavCtrl', ['$scope', 'navData', 'userData', function($scope, navData, userData) {
+controller('SideNavCtrl', ['$scope', '$location', 'navData', 'userData', function($scope, $location, navData, userData) {
 	$scope.sideItems = navData.sideItems;
 	$scope.status = userData.status;
 	$scope.user = userData.user;
+
+	$scope.classes = function() {
+		var classes = [];
+		if (this.item.location == '#' + $location.path()) {
+			classes.push('active');
+		}
+		return classes;
+	}
 }]).
 
 controller('CrumbsCtrl', ['$scope', '$location', 'navData', function($scope, $location, navData) {
-	$scope.crumbs = navData.crumbs;
-	console.log('hash', $location.hash(), 'path', $location.path(), 'search', $location.search(), 'url', $location.url());
+	$scope.crumbs = navData.crumbsSet($location.path());
+	console.log('# [crumbs]', 'hash:', $location.hash(), 'path:', $location.path(), 'search:', $location.search(), 'url:', $location.url());
 }]).
 
 config(['$routeProvider', function($routeProvider) {
