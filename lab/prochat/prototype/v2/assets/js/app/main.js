@@ -5,9 +5,10 @@
 */
 angular.module('protoApp', ['protoApp.services', 'protoApp.directives', 'ngRoute', 'ui.bootstrap']).
 
-controller('TopNavCtrl', ['$scope', 'userData', function($scope, userData) {
+controller('TopNavCtrl', ['$scope', 'userData', 'appSettings', function($scope, userData, appSettings) {
 	$scope.status = userData.status;
 	$scope.user = userData.user;
+	$scope.appName = appSettings.name;
 }]).
 
 controller('SideNavCtrl', ['$scope', '$location', 'navData', 'userData', function($scope, $location, navData, userData) {

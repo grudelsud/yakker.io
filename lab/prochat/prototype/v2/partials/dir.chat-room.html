@@ -1,17 +1,20 @@
-<div>	
+<div>
+	<h4>{{roomData.title}}</h4>
+	<div class="pull-right">
+		<input type="text" class="form-control input-sm" placeholder="filter" ng-model="contentFilter">
+	</div>
 	<tabset>
 		<tab>
 
 			<tab-heading>
-				<i class="icon-comment blue"></i>
-				{{roomData.title}}
+				<i class="icon-comment blue"></i> Messages
 			</tab-heading>
 
 			<div class="widget-body">
 				<div class="conversation" id="conversation-{{roomData.id}}">
 
 					<!-- repeat .item -->
-					<div ng-repeat="message in roomData.messages" class="item">
+					<div ng-repeat="message in roomData.messages | filter:contentFilter" class="item">
 
 						<div class="row">
 							<div class="col-sm-12">

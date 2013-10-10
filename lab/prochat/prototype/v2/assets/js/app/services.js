@@ -2,6 +2,12 @@
 
 angular.module('protoApp.services', ['ngResource']).
 
+factory('appSettings', function() {
+	return {
+		name: 'dekiru'
+	}
+}).
+
 factory('userData', function() {
 	return {
 		status: {

@@ -5,9 +5,7 @@
 		<div class=" col-sm-4">
 
 			<div class="widget-header">
-				<h4 class="lighter smaller">
-					Active Rooms
-				</h4>
+				<h4>Active Rooms</h4>
 			</div>
 
 			<div class="widget-toolbox">
@@ -15,12 +13,13 @@
 					<button type="button" class="btn btn-default btn-xs"><i class="icon-plus-sign-alt"></i> create</button>
 					<button type="button" class="btn btn-default btn-xs"><i class="icon-bullhorn"></i> broadcast</button>
 				</div>
+				<input type="text" class="form-control input-sm" placeholder="filter" ng-model="roomFilter">
 			</div>
 
 			<div class="widget-body">
 
 				<!-- repeat .item -->
-				<div ng-repeat="room in rooms" class="item">
+				<div ng-repeat="room in rooms | filter:roomFilter" class="item">
 					<div class="name">
 						<a href="" ng-click="selectRoom()">{{room.name}}</a>
 					</div>
